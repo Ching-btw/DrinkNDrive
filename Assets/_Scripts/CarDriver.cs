@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class CarDriver : MonoBehaviour
 {
-    
     public enum Axel
     {
         Front,
@@ -23,12 +22,13 @@ public class CarDriver : MonoBehaviour
     }
 
     [Header("Stats")]
-    [SerializeField] private float motorTorque = 50;
-    [SerializeField] private float brakeTorque = 200;
+    [SerializeField] private float drinkMultiplierIncrementPerDrink = 0.2f;
+    [SerializeField] private float motorTorque = 69f;
+    [SerializeField] private float brakeTorque = 300f;
 
     [SerializeField] private float turnSensitivity = 5f;
     [SerializeField] private float maxSteerAngle = 45f;
-    [SerializeField] private float maxSpeed = 35000f;
+    [SerializeField] private float maxSpeed = 50000f;
 
     [SerializeField] private float minSpeedToShowTireMarks = 6f;
 
@@ -48,6 +48,10 @@ public class CarDriver : MonoBehaviour
     private Rigidbody carRb;
     private float currentSpeed;
 
+    private float drinkMultiplier = 1f;
+
+    private bool drinkInput;
+
     private void Awake()
     {
         carRb = GetComponent<Rigidbody>();
@@ -56,6 +60,8 @@ public class CarDriver : MonoBehaviour
     private void Start()
     {
         carRb.centerOfMass = centerOfMass;
+
+        drinkMultiplier = 1f;
     }
 
     private void Update()
@@ -94,7 +100,7 @@ public class CarDriver : MonoBehaviour
         {
             foreach (Wheel wheel in wheels)
             {
-                wheel.wheelCollider.motorTorque = moveInput * motorTorque;
+                wheel.wheelCollider.motorTorque = moveInput * motorTorque * drinkMultiplier;
             }
         }
         else
@@ -170,6 +176,11 @@ public class CarDriver : MonoBehaviour
 
             if(wheel.driftSmokeParticleSystem != null) wheel.driftSmokeParticleSystem.Emit(1);
         }
+    }
+
+    public void SetDrinkMultiplier(int numberOfDrinks)
+    {
+        drinkMultiplier = Mathf.Pow(drinkMultiplierIncrementPerDrink, numberOfDrinks);
     }
 
 }

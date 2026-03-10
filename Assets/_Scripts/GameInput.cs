@@ -5,12 +5,6 @@ public class GameInput : MonoBehaviour
 {
     public static GameInput Instance {  get; private set; }
 
-    public event EventHandler OnAccelerateInputPerformed;
-    public event EventHandler OnDecelerateInputPerformed;
-    public event EventHandler OnBrakeInputPerformed;
-    public event EventHandler OnSteerLeftInputPerformed;
-    public event EventHandler OnSteerRightInputPerformed;
-
     private PlayerInputActions playerInputActions;
 
     private void Awake()
@@ -44,5 +38,10 @@ public class GameInput : MonoBehaviour
     public bool isSteerRightButtonPressed()
     {
         return playerInputActions.CarController.SteerRight.IsPressed();
+    }
+
+    public bool isDrinkButtonPressed()
+    {
+        return playerInputActions.CarController.Drink.IsPressed();
     }
 }

@@ -90,12 +90,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     ""maps"": [
         {
             ""name"": ""CarController"",
-            ""id"": ""20c3090c-452f-4e0e-88e2-5b92e160c964"",
+            ""id"": ""9af95144-c028-41d5-a9bc-9adad076fdb9"",
             ""actions"": [
                 {
                     ""name"": ""Accelerate"",
                     ""type"": ""Button"",
-                    ""id"": ""74714389-c4ca-4d40-b055-2717c6bed2db"",
+                    ""id"": ""71a82109-9ab0-46c1-916a-3bde3d78ece6"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -104,7 +104,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Decelerate"",
                     ""type"": ""Button"",
-                    ""id"": ""4c1bd2ee-7bf8-43c5-ad66-d31753538a9b"",
+                    ""id"": ""58e261dc-f8fc-44ed-91d0-020a948e5307"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -113,7 +113,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Brake"",
                     ""type"": ""Button"",
-                    ""id"": ""f79a9a06-6c28-4f0b-bfa9-c19b80147e64"",
+                    ""id"": ""5341ac28-5aad-48e2-b9f0-9ad7b90fc1be"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -122,7 +122,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""SteerLeft"",
                     ""type"": ""Button"",
-                    ""id"": ""04e306eb-dee8-4201-a94a-70295244bf33"",
+                    ""id"": ""b5a6dcd8-64e0-4ad3-b63c-10a1d55fa6ad"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -131,7 +131,16 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""SteerRight"",
                     ""type"": ""Button"",
-                    ""id"": ""6e501d6e-5866-49d9-9052-4843151f3cbe"",
+                    ""id"": ""f167cd89-8df1-4c9c-b397-805203bb74b1"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Drink"",
+                    ""type"": ""Button"",
+                    ""id"": ""79131cad-996d-4805-94af-1db1c5e26545"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -141,73 +150,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""56fb81c9-3dad-40c0-8bf5-65ad32ff44cb"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Brake"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""9952ace6-ae3d-4fe0-a50a-94a1166356b3"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Brake"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""acb80e1d-6e01-497a-a0d5-6e4da2f0319f"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Brake"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""bd082891-3319-4514-aa04-e1042da7d3fc"",
-                    ""path"": ""<Gamepad>/rightStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Decelerate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ddd9f5b7-2923-4fb1-8998-e5472a0bdfd0"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Decelerate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""91f99325-f531-4398-9f62-33c7fb731267"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Decelerate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e8d5426e-9478-4b89-874c-7ed821d24fd9"",
+                    ""id"": ""3179be3e-85d8-4e09-b3ac-601931e6226c"",
                     ""path"": ""<Gamepad>/rightStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -218,7 +161,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""2314fec3-a32c-41dc-a2f9-448795f1606a"",
+                    ""id"": ""4d692435-b6a8-4712-ab54-c1222cbdc84b"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -229,7 +172,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""cd8eb3cd-350d-4299-bfbe-d11034fee4ec"",
+                    ""id"": ""f8e8dc3b-0ea5-4742-bfc5-b73f4609e8a9"",
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -240,7 +183,73 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f721b9f8-a8d6-4167-aa63-91a6383dabb4"",
+                    ""id"": ""3ba9991f-a7c5-4813-9331-7e3cea8838f5"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Decelerate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0d4de357-58e6-455c-a8fb-60055f3a85d8"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Decelerate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b48acaab-3bdb-4c13-965a-2761dc7745d0"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Decelerate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""674a1417-748e-4bea-95a5-bfec4215e8d3"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Brake"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2328dc5c-1a07-47f5-9310-94df4129c85f"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Brake"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""09f32e2f-8525-46d9-a30c-f491289da08b"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Brake"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ecf38011-1808-45e5-bfda-4dcfb69976f1"",
                     ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -251,7 +260,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""88c78528-480a-4840-bd20-4480ff0ed171"",
+                    ""id"": ""410c5a64-51b4-494d-955f-503d1bd40565"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -262,7 +271,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""185f62ca-c4dd-45da-87fa-12c510d1b3bf"",
+                    ""id"": ""bbec8fff-feb7-4a97-bcb6-b1c997c1c3ed"",
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -273,7 +282,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""cd5420fa-565f-46f9-abda-ef12e049e829"",
+                    ""id"": ""d1ccc6b9-482a-4d58-aaf7-5df97dc33f55"",
                     ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -284,7 +293,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""8dc1edb5-b449-4244-811b-58d71c02e264"",
+                    ""id"": ""3bbb989c-5965-4583-a1c1-cf78c9b7702a"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -295,12 +304,45 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""6a48ce60-9fde-4621-aaea-c73b25e29bbd"",
+                    ""id"": ""fa05ebb5-71f5-4999-971d-21d2fa2d7862"",
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""SteerRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""164e51ac-c59d-413d-887e-403287efbb9c"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Drink"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1e9060eb-5fcd-4d23-a5ac-5dfb6054b7ab"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Drink"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ef994a16-28b2-4e6b-a7bc-8c70b08d6efb"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Drink"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -316,6 +358,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_CarController_Brake = m_CarController.FindAction("Brake", throwIfNotFound: true);
         m_CarController_SteerLeft = m_CarController.FindAction("SteerLeft", throwIfNotFound: true);
         m_CarController_SteerRight = m_CarController.FindAction("SteerRight", throwIfNotFound: true);
+        m_CarController_Drink = m_CarController.FindAction("Drink", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -401,6 +444,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_CarController_Brake;
     private readonly InputAction m_CarController_SteerLeft;
     private readonly InputAction m_CarController_SteerRight;
+    private readonly InputAction m_CarController_Drink;
     /// <summary>
     /// Provides access to input actions defined in input action map "CarController".
     /// </summary>
@@ -432,6 +476,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "CarController/SteerRight".
         /// </summary>
         public InputAction @SteerRight => m_Wrapper.m_CarController_SteerRight;
+        /// <summary>
+        /// Provides access to the underlying input action "CarController/Drink".
+        /// </summary>
+        public InputAction @Drink => m_Wrapper.m_CarController_Drink;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -473,6 +521,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @SteerRight.started += instance.OnSteerRight;
             @SteerRight.performed += instance.OnSteerRight;
             @SteerRight.canceled += instance.OnSteerRight;
+            @Drink.started += instance.OnDrink;
+            @Drink.performed += instance.OnDrink;
+            @Drink.canceled += instance.OnDrink;
         }
 
         /// <summary>
@@ -499,6 +550,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @SteerRight.started -= instance.OnSteerRight;
             @SteerRight.performed -= instance.OnSteerRight;
             @SteerRight.canceled -= instance.OnSteerRight;
+            @Drink.started -= instance.OnDrink;
+            @Drink.performed -= instance.OnDrink;
+            @Drink.canceled -= instance.OnDrink;
         }
 
         /// <summary>
@@ -574,5 +628,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSteerRight(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Drink" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDrink(InputAction.CallbackContext context);
     }
 }
