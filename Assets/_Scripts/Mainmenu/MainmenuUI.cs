@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class MainmenuUI : MonoBehaviour
 {
     [SerializeField] private GameObject instructionsPanel;
+    [SerializeField] private GameObject CreditsPanel;
     void Start()
     { 
         instructionsPanel.SetActive(false);
@@ -14,6 +15,9 @@ public class MainmenuUI : MonoBehaviour
     {
         
     }
+
+    
+
 
     public void Play()
     {
@@ -32,9 +36,16 @@ public class MainmenuUI : MonoBehaviour
 
     }
 
-    public void Credits()
+    public void HideCredits()
     {
-        Debug.Log("credits");
+        CreditsPanel.SetActive(false);
+    }
+
+
+
+    public void ShowCredits()
+    {
+        CreditsPanel.SetActive(true);
 
     }
 
