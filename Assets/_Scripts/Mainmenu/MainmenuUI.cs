@@ -8,6 +8,7 @@ public class MainmenuUI : MonoBehaviour
     void Start()
     { 
         instructionsPanel.SetActive(false);
+        CreditsPanel.SetActive(false);
         
     }
 
