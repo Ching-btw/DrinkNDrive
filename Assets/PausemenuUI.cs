@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 public class PauseMenuUI : MonoBehaviour
 {
     public GameObject optionsPanel;
+    void Start()
+    {
+        optionsPanel.SetActive(false);   
+    }
 
     public void ResumeGame()
     {
