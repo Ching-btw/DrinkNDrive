@@ -44,7 +44,7 @@ public class CarDriver : MonoBehaviour
 
     private float moveInput;
     private float steerInput;
-    private bool brakeInput;
+    private float brakeInput;
     private Rigidbody carRb;
     private float currentSpeed;
 
@@ -82,14 +82,16 @@ public class CarDriver : MonoBehaviour
     {
         moveInput = 0f;
         steerInput = 0f;
+        brakeInput = 0f;
 
-        if (GameInput.Instance.isAccelerateButtonPressed()) moveInput += 1f;
-        if (GameInput.Instance.isDecelerateButtonPressed()) moveInput -= 1f;
+        moveInput += GameInput.Instance.GetAccelerateInputMagnitude();
+        moveInput -= GameInput.Instance.GetDecelerateInputMagnitude();
 
-        if (GameInput.Instance.isSteerRightButtonPressed()) steerInput += 1f;
-        if (GameInput.Instance.isSteerLeftButtonPressed()) steerInput -= 1f;
+        steerInput += GameInput.Instance.GetSteerRightInputMagnitude();
+        steerInput -= GameInput.Instance.GetSteerLeftInputMagnitude();
 
-        brakeInput = GameInput.Instance.isBrakeButtonPressed();
+        brakeInput += GameInput.Instance.GetBrakeInputMagnitude();
+
     }
 
     private void Move()
@@ -132,7 +134,7 @@ public class CarDriver : MonoBehaviour
 
     private void Brake()
     {
-        if (brakeInput)
+        if (brakeInput > 0.01f)
         {
             foreach(Wheel wheel in wheels)
             {
@@ -164,7 +166,7 @@ public class CarDriver : MonoBehaviour
         {
             if (wheel.wheelEffectGameObj != null && wheel.wheelEffectGameObj.GetComponentInChildren<TrailRenderer>() != null)
             {
-                if (brakeInput && wheel.axel == Axel.Back && wheel.wheelCollider.isGrounded && carRb.linearVelocity.magnitude >= minSpeedToShowTireMarks)
+                if (brakeInput > 0.01f && wheel.axel == Axel.Back && wheel.wheelCollider.isGrounded && carRb.linearVelocity.magnitude >= minSpeedToShowTireMarks)
                 {
                     wheel.wheelEffectGameObj.GetComponentInChildren<TrailRenderer>().emitting = true;
                 }
