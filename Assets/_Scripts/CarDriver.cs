@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,7 +21,7 @@ public class CarDriver : MonoBehaviour
     }
 
     [Header("Stats")]
-    [SerializeField] private float drinkMultiplierIncrementPerDrink = 0.2f;
+    [SerializeField, Range(1f, 3f)] private float drinkMultiplierPerDrink = 1.2f;
     [SerializeField] private float motorTorque = 69f;
     [SerializeField] private float brakeTorque = 300f;
 
@@ -49,8 +48,6 @@ public class CarDriver : MonoBehaviour
     private float currentSpeed;
 
     private float drinkMultiplier = 1f;
-
-    private bool drinkInput;
 
     private void Awake()
     {
@@ -98,7 +95,7 @@ public class CarDriver : MonoBehaviour
     {
         currentSpeed = 2 * Mathf.PI * wheels[0].wheelCollider.radius * wheels[0].wheelCollider.rpm * 60;
 
-        if (currentSpeed < maxSpeed)
+        if (currentSpeed < maxSpeed * drinkMultiplier)
         {
             foreach (Wheel wheel in wheels)
             {
@@ -182,7 +179,7 @@ public class CarDriver : MonoBehaviour
 
     public void SetDrinkMultiplier(int numberOfDrinks)
     {
-        drinkMultiplier = Mathf.Pow(drinkMultiplierIncrementPerDrink, numberOfDrinks);
+        drinkMultiplier = Mathf.Pow(drinkMultiplierPerDrink, numberOfDrinks);
     }
 
 }
