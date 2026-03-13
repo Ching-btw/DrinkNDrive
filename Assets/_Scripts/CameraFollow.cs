@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 
+
+// This was for third person view. Do not use this one.
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private float moveSmoothness;
