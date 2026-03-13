@@ -1,10 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+
 public class MainmenuUI : MonoBehaviour
+
 {
     [SerializeField] private GameObject instructionsPanel;
     [SerializeField] private GameObject CreditsPanel;
+    
+
     void Start()
     { 
         instructionsPanel.SetActive(false);
@@ -18,7 +23,16 @@ public class MainmenuUI : MonoBehaviour
     }
 
     
-
+    public void OnHover(GameObject button)
+    {
+        button.transform.localScale = Vector3.Lerp(button.transform.localScale, new Vector3(1.25f,1.25f,1.25f),Time.deltaTime*100f);
+    }
+    
+    public void OnHover1(GameObject Button)
+    {
+        Button.transform.localScale = Vector3.Lerp(Button.transform.localScale, new Vector3(1f, 1f, 1f), Time.deltaTime * 100f);
+        
+    }
 
     public void Play()
     {
