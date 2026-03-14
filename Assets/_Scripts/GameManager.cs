@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         {
             drinkTimer -= Time.deltaTime;
 
-            if(drinkTimer <= 0)
+            if(drinkTimer <= 0 && !GameInput.Instance.isDrinkButtonPressed())
             {
                 drinkTimer = drinkCooldown;
                 isInDrinkCooldown = false;
