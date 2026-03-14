@@ -8985,7 +8985,7 @@ MonoBehaviour:
   motorTorque: 40
   brakeTorque: 300
   turnSensitivity: 5
-  maxSteerAngle: 45
+  maxSteerAngle: 30
   maxSpeed: 30000
   steeringWheelLerpSpeed: 5
   minSpeedToShowTireMarks: 6
