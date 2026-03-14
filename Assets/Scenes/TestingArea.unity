@@ -2922,7 +2922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsGlobal: 1
-  priority: 10
+  priority: 0
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 1ebb2aba9ead92c4d9dad519ddf5b659, type: 2}
@@ -3541,6 +3541,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1016240266}
   - component: {fileID: 1016240267}
+  - component: {fileID: 1016240268}
   m_Layer: 0
   m_Name: Drink5_Effect
   m_TagString: Untagged
@@ -3578,6 +3579,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drinkGlobalVolume: {fileID: 1497175374}
   transitionTime: 3
+--- !u!114 &1016240268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016240265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 984ec7fd81a47bd47bb5c721cdd6f0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radialScreenBlur: {fileID: 2100000, guid: cb48faf251933c74ca356dd204cb0b56, type: 2}
+  blurLoopTime: 3
 --- !u!1001 &1023314620
 PrefabInstance:
   m_ObjectHideFlags: 0
