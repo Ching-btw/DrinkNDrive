@@ -8982,11 +8982,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drinkMultiplierPerDrink: 1.2
-  motorTorque: 69
+  motorTorque: 40
   brakeTorque: 300
   turnSensitivity: 5
   maxSteerAngle: 45
-  maxSpeed: 50000
+  maxSpeed: 30000
   steeringWheelLerpSpeed: 5
   minSpeedToShowTireMarks: 6
   speedometerRotateSpeed: 10
@@ -9252,11 +9252,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 997d007b9df118f4aa93695acdaf4aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorTorque: 69
+  motorTorque: 50
   brakeTorque: 300
   maxSteerAngle: 45
   turnSpeed: 5
-  maxSpeed: 49000
+  maxSpeed: 40000
   minSpeedToShowTireMarks: 6
   centerOfMass: {x: 0, y: 0, z: 0}
   wheels:

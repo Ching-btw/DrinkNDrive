@@ -289,7 +289,7 @@ public class EnemyCarAI : MonoBehaviour
         {
             foreach (Wheel wheel in wheels)
             {
-                if (wheel.axel == Axel.Front) wheel.wheelCollider.motorTorque = motorTorque;
+                wheel.wheelCollider.motorTorque = motorTorque;
             }
         }
         else
