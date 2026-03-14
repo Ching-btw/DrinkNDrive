@@ -5497,6 +5497,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1435771111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1435771112}
+  m_Layer: 0
+  m_Name: DrinkEffectVolumes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1435771112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435771111}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -86.69, y: 0.9, z: -96.979996}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1455434893
 GameObject:
   m_ObjectHideFlags: 0
@@ -8450,6 +8481,7 @@ MonoBehaviour:
   turnSensitivity: 5
   maxSteerAngle: 45
   maxSpeed: 50000
+  steeringWheelLerpSpeed: 5
   minSpeedToShowTireMarks: 6
   speedometerRotateSpeed: 10
   centerOfMass: {x: 0, y: 0, z: 0}
@@ -10590,3 +10622,4 @@ SceneRoots:
   - {fileID: 65142897479892712}
   - {fileID: 1858430985}
   - {fileID: 1567939075}
+  - {fileID: 1435771112}

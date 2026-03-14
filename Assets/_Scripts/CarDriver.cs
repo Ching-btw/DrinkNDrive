@@ -25,9 +25,10 @@ public class CarDriver : MonoBehaviour
     [SerializeField] private float motorTorque = 69f;
     [SerializeField] private float brakeTorque = 300f;
 
-    [SerializeField] private float turnSensitivity = 5f;
+    [SerializeField] private float turnSensitivity = 0.6f;
     [SerializeField] private float maxSteerAngle = 45f;
     [SerializeField] private float maxSpeed = 50000f;
+    [SerializeField] private float steeringWheelLerpSpeed = 5f;
 
     [SerializeField] private float minSpeedToShowTireMarks = 6f;
     [SerializeField] private float speedometerRotateSpeed = 10f;
@@ -122,12 +123,12 @@ public class CarDriver : MonoBehaviour
         {
             if(wheel.axel == Axel.Front)
             {
-                wheel.wheelCollider.steerAngle = Mathf.Lerp(wheel.wheelCollider.steerAngle, steerAngle, 0.6f);
+                wheel.wheelCollider.steerAngle = Mathf.Lerp(wheel.wheelCollider.steerAngle, steerAngle, turnSensitivity * Time.deltaTime);
 
                 if(steeringWheel != null)
                 {
                     Vector3 eulerAngles = steeringWheel.transform.eulerAngles;
-                    steeringWheel.transform.rotation = Quaternion.Slerp(steeringWheel.transform.rotation, Quaternion.Euler(eulerAngles.x, eulerAngles.y, -steerAngle * 2), turnSensitivity * Time.deltaTime);
+                    steeringWheel.transform.rotation = Quaternion.Slerp(steeringWheel.transform.rotation, Quaternion.Euler(eulerAngles.x, eulerAngles.y, -wheel.wheelCollider.steerAngle * 2), steeringWheelLerpSpeed * Time.deltaTime);
                 }
             }
         }
