@@ -1367,6 +1367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 342354692}
+  - component: {fileID: 342354693}
   m_Layer: 0
   m_Name: Drink1_Effect
   m_TagString: Untagged
@@ -1390,6 +1391,20 @@ Transform:
   - {fileID: 451931391}
   m_Father: {fileID: 1435771112}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &342354693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342354691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1088f9f9ad0743041a16bdeb3c1fa313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drinkGlobalVolume: {fileID: 451931392}
+  transitionTime: 3
 --- !u!1001 &361947077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2681,6 +2696,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 760432778}
+  - component: {fileID: 760432779}
   m_Layer: 0
   m_Name: Drink3_Effect
   m_TagString: Untagged
@@ -2704,6 +2720,20 @@ Transform:
   - {fileID: 1872890268}
   m_Father: {fileID: 1435771112}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &760432779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760432777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1088f9f9ad0743041a16bdeb3c1fa313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drinkGlobalVolume: {fileID: 1872890269}
+  transitionTime: 3
 --- !u!1001 &763759216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3510,6 +3540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1016240266}
+  - component: {fileID: 1016240267}
   m_Layer: 0
   m_Name: Drink5_Effect
   m_TagString: Untagged
@@ -3533,6 +3564,20 @@ Transform:
   - {fileID: 1497175373}
   m_Father: {fileID: 1435771112}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1016240267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016240265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1088f9f9ad0743041a16bdeb3c1fa313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drinkGlobalVolume: {fileID: 1497175374}
+  transitionTime: 3
 --- !u!1001 &1023314620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4867,6 +4912,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1245185679}
+  - component: {fileID: 1245185680}
   m_Layer: 0
   m_Name: Drink2_Effect
   m_TagString: Untagged
@@ -4890,6 +4936,20 @@ Transform:
   - {fileID: 1920312145}
   m_Father: {fileID: 1435771112}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1245185680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245185678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1088f9f9ad0743041a16bdeb3c1fa313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drinkGlobalVolume: {fileID: 1920312146}
+  transitionTime: 3
 --- !u!1001 &1259769760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6825,6 +6885,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1817059124}
+  - component: {fileID: 1817059125}
   m_Layer: 0
   m_Name: Drink4_Effect
   m_TagString: Untagged
@@ -6848,6 +6909,20 @@ Transform:
   - {fileID: 1929970485}
   m_Father: {fileID: 1435771112}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1817059125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817059123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1088f9f9ad0743041a16bdeb3c1fa313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drinkGlobalVolume: {fileID: 1929970486}
+  transitionTime: 3
 --- !u!1 &1858430984
 GameObject:
   m_ObjectHideFlags: 0
@@ -7483,7 +7558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsGlobal: 1
-  priority: 0
+  priority: 2
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 1687d3c2b7f4ce346bc12b8c9a90404d, type: 2}
