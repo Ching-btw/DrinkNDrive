@@ -30,16 +30,18 @@ public class CarDriver : MonoBehaviour
     [SerializeField] private float maxSpeed = 50000f;
 
     [SerializeField] private float minSpeedToShowTireMarks = 6f;
+    [SerializeField] private float speedometerRotateSpeed = 10f;
 
     [Space]
     [SerializeField] private Vector3 centerOfMass;
     
     [Space]
-    [Header("Wheels")]
+    [Header("References")]
     [SerializeField] private List<Wheel> wheels;
 
     [Space]
     [SerializeField] private GameObject steeringWheel;
+    [SerializeField] private GameObject speedometerNeedle;
 
     private float moveInput;
     private float steerInput;
@@ -72,7 +74,9 @@ public class CarDriver : MonoBehaviour
         Steer();
         AnimateWheels();
         Brake();
+
         WheelEffects();
+        SetSpeedometerReading();
     }
 
     private void GetInput()
@@ -175,6 +179,12 @@ public class CarDriver : MonoBehaviour
 
             if(wheel.driftSmokeParticleSystem != null) wheel.driftSmokeParticleSystem.Emit(1);
         }
+    }
+
+    private void SetSpeedometerReading()
+    {
+        float angle = Mathf.Lerp(22.5f, 295.5f, currentSpeed / (maxSpeed * Mathf.Pow(drinkMultiplierPerDrink, GameManager.Instance.GetMaxNumberOfDrinks())));
+        speedometerNeedle.transform.localRotation = Quaternion.Slerp(speedometerNeedle.transform.localRotation, Quaternion.Euler(0, 0, angle), speedometerRotateSpeed * Time.deltaTime);
     }
 
     public void SetDrinkMultiplier(int numberOfDrinks)

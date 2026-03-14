@@ -60,9 +60,14 @@ public class GameManager : MonoBehaviour
         isInDrinkCooldown = true;
 
         drinksLeft--;
-        Destroy(cansParent.GetChild(0).gameObject);
+        if(cansParent.childCount > 0) Destroy(cansParent.GetChild(0).gameObject);
 
         carDriver.SetDrinkMultiplier(maxNumberOfDrinks - drinksLeft);
+    }
+
+    public int GetMaxNumberOfDrinks()
+    {
+        return maxNumberOfDrinks;
     }
 
 }
