@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -14,6 +15,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CarDriver carDriver;
     [SerializeField] private Transform cansParent;
 
+    [Header("Drink Effects")]
+    [SerializeField] private List<GameObject> drinkEffectsInOrder;
+
     private float drinkTimer = 0;
     private int drinksLeft = 0;
     private bool isInDrinkCooldown = false;
@@ -27,6 +31,11 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         drinksLeft = maxNumberOfDrinks;
+
+        foreach(GameObject drinkEffect in drinkEffectsInOrder)
+        {
+            drinkEffect.SetActive(false);
+        }
     }
 
     private void Update()
@@ -63,6 +72,18 @@ public class GameManager : MonoBehaviour
         if(cansParent.childCount > 0) Destroy(cansParent.GetChild(0).gameObject);
 
         carDriver.SetDrinkMultiplier(maxNumberOfDrinks - drinksLeft);
+
+        for(int i=0; i<maxNumberOfDrinks; i++)
+        {
+            if(i < maxNumberOfDrinks - drinksLeft)
+            {
+                drinkEffectsInOrder[i].SetActive(true);
+            }
+            else
+            {
+                drinkEffectsInOrder[i].SetActive(false);
+            }
+        }
     }
 
     public int GetMaxNumberOfDrinks()
