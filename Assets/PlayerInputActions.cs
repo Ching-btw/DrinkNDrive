@@ -145,6 +145,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""0f87c134-cebf-48e2-8cce-6158cc294451"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -345,6 +354,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Drink"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d923ff1-73d4-4034-befa-e8fba2d58e4f"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b0b28673-6c1b-4992-9a68-64ce1b73709d"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -359,6 +390,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_CarController_SteerLeft = m_CarController.FindAction("SteerLeft", throwIfNotFound: true);
         m_CarController_SteerRight = m_CarController.FindAction("SteerRight", throwIfNotFound: true);
         m_CarController_Drink = m_CarController.FindAction("Drink", throwIfNotFound: true);
+        m_CarController_Pause = m_CarController.FindAction("Pause", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -445,6 +477,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_CarController_SteerLeft;
     private readonly InputAction m_CarController_SteerRight;
     private readonly InputAction m_CarController_Drink;
+    private readonly InputAction m_CarController_Pause;
     /// <summary>
     /// Provides access to input actions defined in input action map "CarController".
     /// </summary>
@@ -480,6 +513,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "CarController/Drink".
         /// </summary>
         public InputAction @Drink => m_Wrapper.m_CarController_Drink;
+        /// <summary>
+        /// Provides access to the underlying input action "CarController/Pause".
+        /// </summary>
+        public InputAction @Pause => m_Wrapper.m_CarController_Pause;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -524,6 +561,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Drink.started += instance.OnDrink;
             @Drink.performed += instance.OnDrink;
             @Drink.canceled += instance.OnDrink;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         /// <summary>
@@ -553,6 +593,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Drink.started -= instance.OnDrink;
             @Drink.performed -= instance.OnDrink;
             @Drink.canceled -= instance.OnDrink;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         /// <summary>
@@ -635,5 +678,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnDrink(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Pause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPause(InputAction.CallbackContext context);
     }
 }

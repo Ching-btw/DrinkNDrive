@@ -101,7 +101,7 @@ public class MainmenuUI : MonoBehaviour
         hideCreditsButton.transform.localScale = Vector3.Lerp(hideCreditsButton.transform.localScale, Vector3.one, buttonSelectSpeed * Time.deltaTime);
         quitButton.transform.localScale = Vector3.Lerp(quitButton.transform.localScale, Vector3.one, buttonSelectSpeed * Time.deltaTime);
 
-        selectedButton.transform.localScale = Vector3.Lerp(selectedButton.transform.localScale, new Vector3(selectedButtonScale, selectedButtonScale, selectedButtonScale), buttonSelectSpeed * 2 * Time.deltaTime);
+        if(selectedButton != null) selectedButton.transform.localScale = Vector3.Lerp(selectedButton.transform.localScale, new Vector3(selectedButtonScale, selectedButtonScale, selectedButtonScale), buttonSelectSpeed * 2 * Time.deltaTime);
     }
 }
 

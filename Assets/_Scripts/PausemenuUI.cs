@@ -22,6 +22,7 @@ public class PauseMenuUI : MonoBehaviour
     }
     public void ResumeGame()
     {
+        Time.timeScale = 1f;
         Debug.Log("Resume button pressed");
     }
 

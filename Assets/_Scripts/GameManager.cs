@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private CarDriver carDriver;
     [SerializeField] private Transform cansParent;
+    [SerializeField] private Animator drinkAnimator;
 
     [Header("Drink Effects")]
     [SerializeField] private List<GameObject> drinkEffectsInOrder;
@@ -71,6 +72,8 @@ public class GameManager : MonoBehaviour
         drinksLeft--;
         if(cansParent.childCount > 0) Destroy(cansParent.GetChild(0).gameObject);
 
+        drinkAnimator.SetTrigger("Drink");
+
         carDriver.SetDrinkMultiplier(maxNumberOfDrinks - drinksLeft);
 
         for(int i=0; i<maxNumberOfDrinks; i++)
@@ -90,5 +93,7 @@ public class GameManager : MonoBehaviour
     {
         return maxNumberOfDrinks;
     }
+
+
 
 }
