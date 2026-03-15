@@ -33,9 +33,12 @@ public class GameManager : MonoBehaviour
     {
         drinksLeft = maxNumberOfDrinks;
 
-        foreach(GameObject drinkEffect in drinkEffectsInOrder)
+        if (drinkEffectsInOrder.Count > 0)
         {
-            drinkEffect.SetActive(false);
+            foreach (GameObject drinkEffect in drinkEffectsInOrder)
+            {
+                drinkEffect.SetActive(false);
+            }
         }
     }
 
