@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pauseCanvas;
     [SerializeField] private GameObject victoryCanvas;
     [SerializeField] private TextMeshProUGUI finalText;
+    [SerializeField] private RadialBlurController radialBlurController;
 
     [Header("Drink Effects")]
     [SerializeField] private List<GameObject> drinkEffectsInOrder;
@@ -39,6 +40,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        radialBlurController.SetMinMax(0, 0);
+
         ResumeGame();
         victoryCanvas.SetActive(false);
 
@@ -109,6 +112,21 @@ public class GameManager : MonoBehaviour
                 drinkEffectsInOrder[i].SetActive(false);
             }
         }
+
+        switch (drinksLeft)
+        {
+            default:
+                break;
+            case 2:          // Drank 3
+                radialBlurController.SetMinMax(-0.1f, 0.1f);
+                break;
+            case 1:          // Drank 4
+                radialBlurController.SetMinMax(-0.1f, 0.4f);
+                break;
+            case 0:          // Drank 5
+                radialBlurController.SetMinMax(0.3f, 0.5f);
+                break;
+        }
     }
 
     public int GetMaxNumberOfDrinks()
@@ -145,6 +163,6 @@ public class GameManager : MonoBehaviour
 
         victoryCanvas.SetActive(true);
 
-        finalText.text = "Even after drinking you lost";
+        finalText.text = "Another drunkard won the race";
     }
 }

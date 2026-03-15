@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 1242862671463587321}
   m_Layer: 0
   m_Name: EnemyCar
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -588,7 +588,7 @@ MonoBehaviour:
     driftSmokeParticleSystem: {fileID: 1400327920924172378}
     axel: 1
   path: {fileID: 0}
-  sensorLength: 10
+  sensorLength: 5
   sideSensorLength: 1
   brakeSensorLength: 1
   sensorHeightOffset: 0.6
@@ -884,7 +884,7 @@ GameObject:
   - component: {fileID: 4408241268424371539}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
