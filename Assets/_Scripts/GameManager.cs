@@ -101,4 +101,9 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Won");
     }
+
+    public void LoseGame()
+    {
+        Debug.Log("Lose");
+    }
 }

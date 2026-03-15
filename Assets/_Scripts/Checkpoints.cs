@@ -12,6 +12,10 @@ public class Checkpoints : MonoBehaviour
             {
                 GameManager.Instance.WonGame();
             }
+            else
+            {
+                GameManager.Instance.LoseGame();
+            }
         }
     }
 }
