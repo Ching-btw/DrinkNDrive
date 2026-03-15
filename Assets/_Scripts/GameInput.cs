@@ -17,6 +17,16 @@ public class GameInput : MonoBehaviour
         playerInputActions.CarController.Enable();
     }
 
+    private void OnDestroy()
+    {
+        playerInputActions.Dispose();
+    }
+
+    public bool WasPauseButtonPressed()
+    {
+        return playerInputActions.CarController.Pause.WasPressedThisFrame();
+    }
+
     public float GetAccelerateInputMagnitude()
     {
         return GetNormalizedInputWithDeadzone(Mathf.Abs(playerInputActions.CarController.Accelerate.ReadValue<float>()));

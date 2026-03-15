@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -15,6 +16,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CarDriver carDriver;
     [SerializeField] private Transform cansParent;
     [SerializeField] private Animator drinkAnimator;
+    [SerializeField] private GameObject pauseCanvas;
+    [SerializeField] private GameObject victoryCanvas;
+    [SerializeField] private TextMeshProUGUI finalText;
 
     [Header("Drink Effects")]
     [SerializeField] private List<GameObject> drinkEffectsInOrder;
@@ -22,6 +26,10 @@ public class GameManager : MonoBehaviour
     private float drinkTimer = 0;
     private int drinksLeft = 0;
     private bool isInDrinkCooldown = false;
+
+    private bool isPaused;
+
+    private bool isGameAlreadyEnded = false;
 
 
     private void Awake()
@@ -31,6 +39,11 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        ResumeGame();
+        victoryCanvas.SetActive(false);
+
+        isGameAlreadyEnded = false;
+
         drinksLeft = maxNumberOfDrinks;
 
         if (drinkEffectsInOrder.Count > 0)
@@ -44,6 +57,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (GameInput.Instance.WasPauseButtonPressed())
+        {
+            if (isPaused) ResumeGame();
+            else PauseGame();
+        }
+
         if (!isInDrinkCooldown)
         {
             drinkTimer = drinkCooldown;
@@ -97,13 +116,35 @@ public class GameManager : MonoBehaviour
         return maxNumberOfDrinks;
     }
 
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+        pauseCanvas.SetActive(true);
+        isPaused = true;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+        pauseCanvas.SetActive(false);
+        isPaused = false;
+    }
+
     public void WonGame()
     {
-        Debug.Log("Won");
+        if (isGameAlreadyEnded) return;
+
+        victoryCanvas.SetActive(true);
+
+        finalText.text = "You Won Drunkard!!";
     }
 
     public void LoseGame()
     {
-        Debug.Log("Lose");
+        if (isGameAlreadyEnded) return;
+
+        victoryCanvas.SetActive(true);
+
+        finalText.text = "Even after drinking you lost";
     }
 }

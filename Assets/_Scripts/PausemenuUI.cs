@@ -20,10 +20,11 @@ public class PauseMenuUI : MonoBehaviour
         Button.transform.localScale = Vector3.Lerp(Button.transform.localScale, new Vector3(1f, 1f, 1f), Time.deltaTime * 100f);
 
     }
+
+
     public void ResumeGame()
     {
-        Time.timeScale = 1f;
-        Debug.Log("Resume button pressed");
+        GameManager.Instance.ResumeGame();
     }
 
     public void OpenOptions()
@@ -38,6 +39,7 @@ public class PauseMenuUI : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        GameManager.Instance.ResumeGame();
         SceneManager.LoadScene("mainmenu");
     }
 }
