@@ -97,6 +97,8 @@ public class GameManager : MonoBehaviour
         return maxNumberOfDrinks;
     }
 
-
-
+    public void WonGame()
+    {
+        Debug.Log("Won");
+    }
 }

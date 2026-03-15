@@ -303,11 +303,13 @@ public class EnemyCarAI : MonoBehaviour
 
     private void CheckWayPointDistance()
     {
-        if(Vector3.Distance(transform.position, nodes[currentNode].position) <= 1f)
+        Vector2 transPos = new Vector2(transform.position.x, transform.position.z);
+        Vector2 nodePos = new Vector2(nodes[currentNode].position.x, nodes[currentNode].position.z);
+        if(Vector3.Distance(transPos, nodePos) <= 5f)
         {
             currentNode = (currentNode + 1) % nodes.Count;
         }
-        else if (Vector3.Distance(transform.position, nodes[currentNode].position) <= 5f)
+        else if (Vector3.Distance(transPos, nodePos) <= 15f)
         {
             if (transform.InverseTransformPoint(nodes[currentNode].position).z <= 0)
             {
