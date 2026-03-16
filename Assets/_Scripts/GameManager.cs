@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject victoryCanvas;
     [SerializeField] private TextMeshProUGUI finalText;
     [SerializeField] private RadialBlurController radialBlurController;
+    [SerializeField] private AudioSource musicSource;
 
     [Header("Drink Effects")]
     [SerializeField] private List<GameObject> drinkEffectsInOrder;
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     private bool isGameAlreadyEnded = false;
 
+    private int playerRank = 1;
 
     private void Awake()
     {
@@ -44,6 +46,8 @@ public class GameManager : MonoBehaviour
 
         ResumeGame();
         victoryCanvas.SetActive(false);
+
+        playerRank = 1;
 
         isGameAlreadyEnded = false;
 
@@ -139,6 +143,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         pauseCanvas.SetActive(true);
         isPaused = true;
+        musicSource.volume = 0.1f;
     }
 
     public void ResumeGame()
@@ -146,6 +151,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         pauseCanvas.SetActive(false);
         isPaused = false;
+        musicSource.volume = 0.5f;
     }
 
     public void WonGame()
@@ -154,15 +160,11 @@ public class GameManager : MonoBehaviour
 
         victoryCanvas.SetActive(true);
 
-        finalText.text = "You Won Drunkard!!";
+        finalText.text = $"Congrats Drunkard!\nYou are on position {playerRank} among drunkards";
     }
 
-    public void LoseGame()
+    public void IncrementPlayerRank()
     {
-        if (isGameAlreadyEnded) return;
-
-        victoryCanvas.SetActive(true);
-
-        finalText.text = "Another drunkard won the race";
+        playerRank++;
     }
 }

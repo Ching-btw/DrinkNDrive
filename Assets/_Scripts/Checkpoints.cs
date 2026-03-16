@@ -14,7 +14,8 @@ public class Checkpoints : MonoBehaviour
             }
             else
             {
-                GameManager.Instance.LoseGame();
+                GameManager.Instance.IncrementPlayerRank();
+                other.transform.parent.gameObject.SetActive(false);
             }
         }
     }
