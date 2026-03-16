@@ -2,7 +2,10 @@
 
 ## Game : Drink N Drive
 
-### Team members : Ayush Singh, Sakshi Priyam, Pranesh S
+### Team members
+- Ayush Singh : Programming, Post Processing, Game Design
+- Sakshi Priyam : UI, Asets, Music
+- Pranesh S : emotional support
 
 
 ## Controls
