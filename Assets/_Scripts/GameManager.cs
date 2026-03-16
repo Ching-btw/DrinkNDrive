@@ -160,7 +160,7 @@ public class GameManager : MonoBehaviour
 
         victoryCanvas.SetActive(true);
 
-        finalText.text = $"Congrats Drunkard!\nYou are on position {playerRank} among drunkards";
+        finalText.text = $"Congrats Drunkard!\nYou are on position {playerRank} among 5 drunk men";
     }
 
     public void IncrementPlayerRank()
