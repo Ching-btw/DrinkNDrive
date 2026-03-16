@@ -12054,7 +12054,7 @@ MonoBehaviour:
   isMultithreaded: 1
   isSavingMeshes: 0
   isAllowingRoadUpdates: 1
-  editorPlayCamera: {fileID: 0}
+  editorPlayCamera: {fileID: 1094908868}
 --- !u!4 &585817911
 Transform:
   m_ObjectHideFlags: 0
@@ -22236,6 +22236,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 683628850133609930, guid: 6edf71edfb978c34ca4008863e9a0147, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 9748feee351aab141a699f664670e313, type: 3}
     - target: {fileID: 4875431768864194026, guid: 6edf71edfb978c34ca4008863e9a0147, type: 3}
       propertyPath: m_LocalPosition.x
       value: 250.65
@@ -22407,6 +22411,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!20 &1094908868 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4118462086541494029, guid: 6edf71edfb978c34ca4008863e9a0147, type: 3}
+  m_PrefabInstance: {fileID: 1094908860}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1096586949
 GameObject:
   m_ObjectHideFlags: 0
