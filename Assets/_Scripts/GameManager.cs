@@ -143,7 +143,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         pauseCanvas.SetActive(true);
         isPaused = true;
-        musicSource.volume = 0.1f;
+        musicSource.Pause();
     }
 
     public void ResumeGame()
@@ -151,7 +151,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         pauseCanvas.SetActive(false);
         isPaused = false;
-        musicSource.volume = 0.5f;
+        musicSource.Play();
     }
 
     public void WonGame()
