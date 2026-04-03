@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private RadialBlurController radialBlurController;
     [SerializeField] private AudioSource musicSource;
 
+    [Space]
+    [SerializeField] private EnemyCarAI[] enemyCarAIs;
+
     [Header("Drink Effects")]
     [SerializeField] private List<GameObject> drinkEffectsInOrder;
 
@@ -104,6 +107,10 @@ public class GameManager : MonoBehaviour
         drinkAnimator.SetTrigger("Drink");
 
         carDriver.SetDrinkMultiplier(maxNumberOfDrinks - drinksLeft);
+
+        foreach(EnemyCarAI enemyCarAI in enemyCarAIs) {
+            enemyCarAI.SetDrinkMultiplier(maxNumberOfDrinks - drinksLeft);
+        }
 
         for(int i=0; i<maxNumberOfDrinks; i++)
         {

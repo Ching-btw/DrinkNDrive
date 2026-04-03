@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -24,6 +23,7 @@ public class EnemyCarAI : MonoBehaviour
     }
 
     [Header("Stats")]
+    [SerializeField, Range(1f, 3f)] private float drinkMultiplierPerDrink = 1.1f;
     [SerializeField] private float motorTorque = 50f;
     [SerializeField] private float brakeTorque = 200;
 
@@ -70,6 +70,8 @@ public class EnemyCarAI : MonoBehaviour
 
     private bool isBraking = false;
 
+    private float drinkMultiplier = 1f;
+
     private void Awake()
     {
         carRb = GetComponent<Rigidbody>();
@@ -90,6 +92,8 @@ public class EnemyCarAI : MonoBehaviour
                 nodes.Add(pathTransform);
             }
         }
+
+        drinkMultiplier = 1f;
     }
 
     private void FixedUpdate()
@@ -285,11 +289,11 @@ public class EnemyCarAI : MonoBehaviour
     {
         currentSpeed = 2 * Mathf.PI * wheels[0].wheelCollider.radius * wheels[0].wheelCollider.rpm * 60;
 
-        if (currentSpeed < maxSpeed  && !isBraking)
+        if (currentSpeed < maxSpeed * drinkMultiplier  && !isBraking)
         {
             foreach (Wheel wheel in wheels)
             {
-                wheel.wheelCollider.motorTorque = motorTorque;
+                wheel.wheelCollider.motorTorque = motorTorque * drinkMultiplier;
             }
         }
         else
@@ -375,5 +379,9 @@ public class EnemyCarAI : MonoBehaviour
                 wheel.wheelCollider.steerAngle = Mathf.Lerp(wheel.wheelCollider.steerAngle, targetSteerAngle, turnSpeed * Time.deltaTime);
             }
         }
+    }
+
+    public void SetDrinkMultiplier(int numberOfDrinks) {
+        drinkMultiplier = Mathf.Pow(drinkMultiplierPerDrink, numberOfDrinks);
     }
 }

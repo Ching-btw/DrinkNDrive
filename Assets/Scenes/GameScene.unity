@@ -23244,6 +23244,14 @@ PrefabInstance:
       propertyPath: path
       value: 
       objectReference: {fileID: 536677416}
+    - target: {fileID: 608559650533933167, guid: e8e461551aa450d44a617487d96e46e5, type: 3}
+      propertyPath: maxSpeed
+      value: 32000
+      objectReference: {fileID: 0}
+    - target: {fileID: 608559650533933167, guid: e8e461551aa450d44a617487d96e46e5, type: 3}
+      propertyPath: motorTorque
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 1541391973998982864, guid: e8e461551aa450d44a617487d96e46e5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 255.78
@@ -23297,6 +23305,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8e461551aa450d44a617487d96e46e5, type: 3}
+--- !u!114 &611802685 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 608559650533933167, guid: e8e461551aa450d44a617487d96e46e5, type: 3}
+  m_PrefabInstance: {fileID: 611802684}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997d007b9df118f4aa93695acdaf4aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &618345236
 GameObject:
   m_ObjectHideFlags: 0
@@ -38129,6 +38148,10 @@ PrefabInstance:
       propertyPath: m_Resource
       value: 
       objectReference: {fileID: 8300000, guid: 9748feee351aab141a699f664670e313, type: 3}
+    - target: {fileID: 4588969272913937295, guid: 6edf71edfb978c34ca4008863e9a0147, type: 3}
+      propertyPath: maxSteerAngle
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4875431768864194026, guid: 6edf71edfb978c34ca4008863e9a0147, type: 3}
       propertyPath: m_LocalPosition.x
       value: 250.65
@@ -40244,6 +40267,11 @@ MonoBehaviour:
   finalText: {fileID: 79601487}
   radialBlurController: {fileID: 1633981252}
   musicSource: {fileID: 1094908865}
+  enemyCarAIs:
+  - {fileID: 611802685}
+  - {fileID: 2101162576}
+  - {fileID: 8056636434084072630}
+  - {fileID: 1205169061}
   drinkEffectsInOrder:
   - {fileID: 454070050}
   - {fileID: 8626297}
@@ -40546,11 +40574,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 997d007b9df118f4aa93695acdaf4aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorTorque: 60
+  drinkMultiplierPerDrink: 1.1
+  motorTorque: 55
   brakeTorque: 300
   maxSteerAngle: 45
   turnSpeed: 5
-  maxSpeed: 45000
+  maxSpeed: 40000
   minSpeedToShowTireMarks: 6
   centerOfMass: {x: 0, y: 0, z: 0}
   wheels:
@@ -67834,6 +67863,14 @@ PrefabInstance:
       propertyPath: path
       value: 
       objectReference: {fileID: 2028562890}
+    - target: {fileID: 608559650533933167, guid: e8e461551aa450d44a617487d96e46e5, type: 3}
+      propertyPath: maxSpeed
+      value: 35000
+      objectReference: {fileID: 0}
+    - target: {fileID: 608559650533933167, guid: e8e461551aa450d44a617487d96e46e5, type: 3}
+      propertyPath: motorTorque
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 1541391973998982864, guid: e8e461551aa450d44a617487d96e46e5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 250.5
@@ -67895,6 +67932,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8e461551aa450d44a617487d96e46e5, type: 3}
+--- !u!114 &2101162576 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 608559650533933167, guid: e8e461551aa450d44a617487d96e46e5, type: 3}
+  m_PrefabInstance: {fileID: 2101162575}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997d007b9df118f4aa93695acdaf4aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2107660474
 GameObject:
   m_ObjectHideFlags: 0
@@ -79732,11 +79780,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 997d007b9df118f4aa93695acdaf4aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorTorque: 60
+  drinkMultiplierPerDrink: 1.1
+  motorTorque: 50
   brakeTorque: 300
   maxSteerAngle: 45
   turnSpeed: 5
-  maxSpeed: 45000
+  maxSpeed: 37500
   minSpeedToShowTireMarks: 6
   centerOfMass: {x: 0, y: 0, z: 0}
   wheels:

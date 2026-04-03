@@ -74,7 +74,7 @@
                 {
                     "name": "",
                     "id": "3179be3e-85d8-4e09-b3ac-601931e6226c",
-                    "path": "<Gamepad>/rightStick/up",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -107,7 +107,7 @@
                 {
                     "name": "",
                     "id": "3ba9991f-a7c5-4813-9331-7e3cea8838f5",
-                    "path": "<Gamepad>/rightStick/down",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -140,17 +140,6 @@
                 {
                     "name": "",
                     "id": "674a1417-748e-4bea-95a5-bfec4215e8d3",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Brake",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2328dc5c-1a07-47f5-9310-94df4129c85f",
                     "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
