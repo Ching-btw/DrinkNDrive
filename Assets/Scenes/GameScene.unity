@@ -38152,6 +38152,10 @@ PrefabInstance:
       propertyPath: maxSteerAngle
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4588969272913937295, guid: 6edf71edfb978c34ca4008863e9a0147, type: 3}
+      propertyPath: steeringWheelAngleMultiplier
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4875431768864194026, guid: 6edf71edfb978c34ca4008863e9a0147, type: 3}
       propertyPath: m_LocalPosition.x
       value: 250.65

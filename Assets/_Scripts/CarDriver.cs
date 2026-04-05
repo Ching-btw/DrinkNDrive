@@ -29,6 +29,7 @@ public class CarDriver : MonoBehaviour
     [SerializeField] private float maxSteerAngle = 45f;
     [SerializeField] private float maxSpeed = 50000f;
     [SerializeField] private float steeringWheelLerpSpeed = 5f;
+    [SerializeField] private float steeringWheelAngleMultiplier = 2f;
 
     [SerializeField] private float minSpeedToShowTireMarks = 6f;
     [SerializeField] private float speedometerRotateSpeed = 10f;
@@ -46,7 +47,6 @@ public class CarDriver : MonoBehaviour
 
     private float moveInput;
     private float steerInput;
-    private float brakeInput;
     private Rigidbody carRb;
     private float currentSpeed;
 
@@ -74,7 +74,6 @@ public class CarDriver : MonoBehaviour
         Move();
         Steer();
         AnimateWheels();
-        Brake();
 
         WheelEffects();
         SetSpeedometerReading();
@@ -84,7 +83,6 @@ public class CarDriver : MonoBehaviour
     {
         moveInput = 0f;
         steerInput = 0f;
-        brakeInput = 0f;
 
         moveInput += GameInput.Instance.GetAccelerateInputMagnitude();
         moveInput -= GameInput.Instance.GetDecelerateInputMagnitude();
@@ -92,19 +90,24 @@ public class CarDriver : MonoBehaviour
         steerInput += GameInput.Instance.GetSteerRightInputMagnitude();
         steerInput -= GameInput.Instance.GetSteerLeftInputMagnitude();
 
-        brakeInput += GameInput.Instance.GetBrakeInputMagnitude();
-
     }
 
     private void Move()
     {
         currentSpeed = 2 * Mathf.PI * wheels[0].wheelCollider.radius * wheels[0].wheelCollider.rpm * 60;
 
+        float forwardVelocityDir = Mathf.Sign(carRb.linearVelocity.z);
+
         if (currentSpeed < maxSpeed * drinkMultiplier)
         {
             foreach (Wheel wheel in wheels)
             {
-                wheel.wheelCollider.motorTorque = moveInput * motorTorque * drinkMultiplier;
+                if (forwardVelocityDir * moveInput > 0) {
+                    wheel.wheelCollider.motorTorque = moveInput * motorTorque * drinkMultiplier;
+                }
+                else {
+                    wheel.wheelCollider.motorTorque = moveInput * brakeTorque * drinkMultiplier;
+                }
             }
         }
         else
@@ -128,26 +131,8 @@ public class CarDriver : MonoBehaviour
                 if(steeringWheel != null)
                 {
                     Vector3 eulerAngles = steeringWheel.transform.eulerAngles;
-                    steeringWheel.transform.rotation = Quaternion.Slerp(steeringWheel.transform.rotation, Quaternion.Euler(eulerAngles.x, eulerAngles.y, -wheel.wheelCollider.steerAngle * 2), steeringWheelLerpSpeed * Time.deltaTime);
+                    steeringWheel.transform.rotation = Quaternion.Slerp(steeringWheel.transform.rotation, Quaternion.Euler(eulerAngles.x, eulerAngles.y, -wheel.wheelCollider.steerAngle * steeringWheelAngleMultiplier), steeringWheelLerpSpeed * Time.deltaTime);
                 }
-            }
-        }
-    }
-
-    private void Brake()
-    {
-        if (brakeInput > 0.01f)
-        {
-            foreach(Wheel wheel in wheels)
-            {
-                wheel.wheelCollider.brakeTorque = brakeTorque;
-            }
-        }
-        else
-        {
-            foreach(Wheel wheel in wheels)
-            {
-                wheel.wheelCollider.brakeTorque = 0;
             }
         }
     }
@@ -168,7 +153,8 @@ public class CarDriver : MonoBehaviour
         {
             if (wheel.wheelEffectGameObj != null && wheel.wheelEffectGameObj.GetComponentInChildren<TrailRenderer>() != null)
             {
-                if (brakeInput > 0.01f && wheel.axel == Axel.Back && wheel.wheelCollider.isGrounded && carRb.linearVelocity.magnitude >= minSpeedToShowTireMarks)
+                float forwardVelocityDir = Mathf.Sign(carRb.linearVelocity.z);
+                if (forwardVelocityDir * moveInput < 0 && wheel.axel == Axel.Back && wheel.wheelCollider.isGrounded && carRb.linearVelocity.magnitude >= minSpeedToShowTireMarks)
                 {
                     wheel.wheelEffectGameObj.GetComponentInChildren<TrailRenderer>().emitting = true;
                 }

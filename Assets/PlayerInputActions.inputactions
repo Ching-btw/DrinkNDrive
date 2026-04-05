@@ -25,15 +25,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Brake",
-                    "type": "Button",
-                    "id": "5341ac28-5aad-48e2-b9f0-9ad7b90fc1be",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "SteerLeft",
                     "type": "Button",
                     "id": "b5a6dcd8-64e0-4ad3-b63c-10a1d55fa6ad",
@@ -139,28 +130,6 @@
                 },
                 {
                     "name": "",
-                    "id": "674a1417-748e-4bea-95a5-bfec4215e8d3",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Brake",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "09f32e2f-8525-46d9-a30c-f491289da08b",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Brake",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "ecf38011-1808-45e5-bfda-4dcfb69976f1",
                     "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
@@ -240,6 +209,17 @@
                     "name": "",
                     "id": "1e9060eb-5fcd-4d23-a5ac-5dfb6054b7ab",
                     "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Drink",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6b380d08-5842-4690-97f2-34a4da974288",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

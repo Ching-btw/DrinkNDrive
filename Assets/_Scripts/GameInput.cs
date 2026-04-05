@@ -37,11 +37,6 @@ public class GameInput : MonoBehaviour
         return GetNormalizedInputWithDeadzone(Mathf.Abs(playerInputActions.CarController.Decelerate.ReadValue<float>()));
     }
 
-    public float GetBrakeInputMagnitude()
-    {
-        return GetNormalizedInputWithDeadzone(Mathf.Abs(playerInputActions.CarController.Brake.ReadValue<float>()));
-    }
-
     public float GetSteerLeftInputMagnitude()
     {
         return GetNormalizedInputWithDeadzone(Mathf.Abs(playerInputActions.CarController.SteerLeft.ReadValue<float>()));
@@ -60,16 +55,6 @@ public class GameInput : MonoBehaviour
     public bool isDecelerateButtonPressed()
     {
         return playerInputActions.CarController.Decelerate.IsPressed();
-    }
-
-    public bool isBrakeButtonPressed()
-    {
-        return playerInputActions.CarController.Brake.IsPressed();
-    }
-
-    public bool isSteerLeftButtonPressed()
-    {
-        return playerInputActions.CarController.SteerLeft.IsPressed();
     }
 
     public bool isSteerRightButtonPressed()

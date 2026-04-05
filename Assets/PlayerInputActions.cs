@@ -111,15 +111,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Brake"",
-                    ""type"": ""Button"",
-                    ""id"": ""5341ac28-5aad-48e2-b9f0-9ad7b90fc1be"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
                     ""name"": ""SteerLeft"",
                     ""type"": ""Button"",
                     ""id"": ""b5a6dcd8-64e0-4ad3-b63c-10a1d55fa6ad"",
@@ -225,28 +216,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""674a1417-748e-4bea-95a5-bfec4215e8d3"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Brake"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""09f32e2f-8525-46d9-a30c-f491289da08b"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Brake"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""ecf38011-1808-45e5-bfda-4dcfb69976f1"",
                     ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
@@ -335,6 +304,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""6b380d08-5842-4690-97f2-34a4da974288"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Drink"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""ef994a16-28b2-4e6b-a7bc-8c70b08d6efb"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
@@ -375,7 +355,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_CarController = asset.FindActionMap("CarController", throwIfNotFound: true);
         m_CarController_Accelerate = m_CarController.FindAction("Accelerate", throwIfNotFound: true);
         m_CarController_Decelerate = m_CarController.FindAction("Decelerate", throwIfNotFound: true);
-        m_CarController_Brake = m_CarController.FindAction("Brake", throwIfNotFound: true);
         m_CarController_SteerLeft = m_CarController.FindAction("SteerLeft", throwIfNotFound: true);
         m_CarController_SteerRight = m_CarController.FindAction("SteerRight", throwIfNotFound: true);
         m_CarController_Drink = m_CarController.FindAction("Drink", throwIfNotFound: true);
@@ -462,7 +441,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private List<ICarControllerActions> m_CarControllerActionsCallbackInterfaces = new List<ICarControllerActions>();
     private readonly InputAction m_CarController_Accelerate;
     private readonly InputAction m_CarController_Decelerate;
-    private readonly InputAction m_CarController_Brake;
     private readonly InputAction m_CarController_SteerLeft;
     private readonly InputAction m_CarController_SteerRight;
     private readonly InputAction m_CarController_Drink;
@@ -486,10 +464,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "CarController/Decelerate".
         /// </summary>
         public InputAction @Decelerate => m_Wrapper.m_CarController_Decelerate;
-        /// <summary>
-        /// Provides access to the underlying input action "CarController/Brake".
-        /// </summary>
-        public InputAction @Brake => m_Wrapper.m_CarController_Brake;
         /// <summary>
         /// Provides access to the underlying input action "CarController/SteerLeft".
         /// </summary>
@@ -538,9 +512,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Decelerate.started += instance.OnDecelerate;
             @Decelerate.performed += instance.OnDecelerate;
             @Decelerate.canceled += instance.OnDecelerate;
-            @Brake.started += instance.OnBrake;
-            @Brake.performed += instance.OnBrake;
-            @Brake.canceled += instance.OnBrake;
             @SteerLeft.started += instance.OnSteerLeft;
             @SteerLeft.performed += instance.OnSteerLeft;
             @SteerLeft.canceled += instance.OnSteerLeft;
@@ -570,9 +541,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Decelerate.started -= instance.OnDecelerate;
             @Decelerate.performed -= instance.OnDecelerate;
             @Decelerate.canceled -= instance.OnDecelerate;
-            @Brake.started -= instance.OnBrake;
-            @Brake.performed -= instance.OnBrake;
-            @Brake.canceled -= instance.OnBrake;
             @SteerLeft.started -= instance.OnSteerLeft;
             @SteerLeft.performed -= instance.OnSteerLeft;
             @SteerLeft.canceled -= instance.OnSteerLeft;
@@ -639,13 +607,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnDecelerate(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "Brake" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnBrake(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "SteerLeft" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
