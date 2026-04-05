@@ -147,6 +147,8 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
+        if (isGameAlreadyEnded) return;
+
         Time.timeScale = 0f;
         pauseCanvas.SetActive(true);
         isPaused = true;
