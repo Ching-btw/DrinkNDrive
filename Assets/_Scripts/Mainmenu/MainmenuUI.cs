@@ -42,7 +42,6 @@ public class MainmenuUI : MonoBehaviour
 
     public void Play()
     {
-        Debug.Log("play");
         SceneManager.LoadScene("GameScene");
     }
 
